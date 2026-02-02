@@ -1,0 +1,373 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= FONTS ================= */
+.graffiti {
+  font-family: 'Knewave', cursive;
+}
+
+.normal {
+  font-family: 'Funnel Sans', sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background-color: #faf7e4;
+  background-image:
+    linear-gradient(#e2ded4 1px, transparent 1px),
+    linear-gradient(90deg, #e2ded4 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #1f2937;
+}
+
+/* ================= PAGE ================= */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #e2ded4;
+  padding: 20px 30px;
+  border-radius: 50px;
+  background: #faf7e4;
+}
+
+.logo {
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav-item {
+  display: inline-block; /* extrem wichtig für transform */
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+.spende {
+  border: 2px solid #e2ded4;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1f2937;
+  transition: transform 0.2s;
+  font-size: 20px;
+}
+
+.spende:hover {
+  transform: scale(1.1);
+}
+
+/* ================= ABIMOTTO ================= */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.headline-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.headline {
+  font-size: 72px;
+}
+
+.pfeil {
+  position: absolute;
+  top: -20px;
+  left: 20%;
+  color: #9e2727;
+  font-size: 60px;
+  transform: rotate(45deg);
+}
+
+.i {
+  position: absolute;
+  top: -45px;
+  left: 30%;
+  color: #9e2727;
+  font-size: 48px;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 30px;
+  color: #9e2727;
+}
+
+.smileytop {
+    position:absolute;
+    top:100px;
+    left: -88%;
+    color:#9e2727;
+    font-size: 48px;
+    rotate: 15deg;
+}
+.smileybottom {
+    position:absolute;
+    top: 120px;
+    left: -91%;
+    color:#9e2727;
+    font-size: 58px;
+    rotate: 15deg;
+}
+
+.paperplane {
+    position: absolute;
+    top: -110px;
+    left: 150%;
+    color:#9e2727;
+    font-size: 108px;
+    rotate: 140deg;
+    
+}
+
+/* ================= Übergangsbereich ================= */
+
+.full-break {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color:#faf7e4;
+  padding: 120px 0 380px; 
+  border-top: 2px solid #e2ded4;
+ 
+}
+
+.div2 {
+  width: 900px;
+  height: 500px;
+  padding: 100px;
+  border: 1px solid #9e2727;
+  text-align: center;
+}
+
+.div2cap {
+    text-align: center;
+    font-size: 45px;
+
+}
+
+.full-break-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================= Unsere Stufe ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+/* INSTAX FRAME */
+.instax {
+  background: #f6f2e8;
+  padding: 16px 16px 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #1f2937;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.instax:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+/* FOTO */
+.instax img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* CAPTION */
+.instax .caption {
+  display: block;
+  margin-top: 18px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/*Stufen Profile*/
+
+/* ===== STUFEN SLIDER FULL WIDTH ===== */
+
+.stufe-slider {
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+/* äußere Hülle → volle Breite */
+.slider-shell {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* sichtbarer Bereich */
+.slider-viewport {
+  overflow: hidden;
+  width: 100vw;
+}
+
+/* bewegte Spur */
+.slider-track {
+  display: flex;
+  gap: 48px;
+  will-change: transform;
+}
+
+/* Profile */
+.profile {
+  min-width: 180px;
+  text-align: center;
+}
+
+.profile img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f6f2e8;
+  border: 4px solid #faf7e4;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.profile:hover img {
+  transform: scale(1.08);
+}
+
+.profile-name {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* ===== Pfeile ganz außen ===== */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #1f2937;
+  color: #faf7e4;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.arrow.left {
+  left: 24px;
+}
+
+.arrow.right {
+  right: 24px;
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== Zitate Laufband ===== */
+
+.quote-line {
+width: 100vw;
+margin-left: calc(-50vw + 50%);
+overflow: hidden;
+border-top: 2px solid rgba(0, 0, 0, 0.25);
+border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+padding: 1.5rem 0;
+}
+
+.quote-track {
+display: flex;
+width: max-content;
+gap: 6rem;
+white-space: nowrap;
+animation: scrollQuotes 40s linear infinite;
+}
+
+.quote-track span {
+font-size: 2rem; /* größer */
+font-weight: 700; /* fett */
+color: #1f2937; /* dunkles Grau */
+letter-spacing: 0.04em; /* edler */
+}
+
+/* Bewegung: rechts -> links */
+@keyframes scrollQuotes {
+from {
+transform: translateX(0);
+}
+to {
+transform: translateX(-50%);
+}
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
