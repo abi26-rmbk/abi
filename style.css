@@ -526,15 +526,18 @@ transform: translateX(-50%);
 }
 
 .steckbrief-container {
+   line-height: 0;
   position: static;
 
   top: 10px;
   left: 20px
+
 }
 
 .steckbrief-template {
   width: 100%;
   display: block;
+  height:auto;
 }
 
 /* ===== FOTO IM KREIS ===== */
