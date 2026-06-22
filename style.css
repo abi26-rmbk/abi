@@ -494,9 +494,9 @@ transform: translateX(-50%);
   width: 85%;
   max-width: 850px;
 
-  max-height: 90vh;
+  max-height: unset;
 
-  overflow-y: auto;
+  overflow-y: unset;
 
   background: white;
 
