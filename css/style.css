@@ -366,7 +366,7 @@ body {
 .steckbrief {
   display: flex;
   gap: 50px;
-
+ height: auto;
   margin-top: 70px;
 
   align-items: flex-start;
