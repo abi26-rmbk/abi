@@ -489,7 +489,7 @@ transform: translateX(-50%);
 
 .modal-content {
 
-  position: absolute;
+  position: relative;
 
   width: 85%;
   max-width: 850px;
