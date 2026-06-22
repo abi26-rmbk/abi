@@ -16,11 +16,22 @@
 
 /* ================= BODY ================= */
 body {
-  background-color: #faf7e4;
   background-image:
-    linear-gradient(#e2ded4 1px, transparent 1px),
+
+   url("./img/IMG_2348.PNG"),
+   linear-gradient(#e2ded4 1px, transparent 1px),
     linear-gradient(90deg, #e2ded4 1px, transparent 1px);
-  background-size: 40px 40px;
+
+  background-size:
+  contain,
+  40px 40px,
+  40px 40px;
+  
+  background-repeat: repeat, repeat, repeat;
+  background-position: center center, top left, top left;
+  background-attachment: fixed;
+   background-color: #ffffff;
+  margin: 0;
   color: #1f2937;
 }
 
@@ -39,7 +50,7 @@ body {
   border: 2px solid #e2ded4;
   padding: 20px 30px;
   border-radius: 50px;
-  background: #faf7e4;
+  background: #ffffff;
 }
 
 .logo {
@@ -59,7 +70,7 @@ body {
 }
 
 .nav-item {
-  display: inline-block; /* extrem wichtig für transform */
+  display: inline-block; 
   text-decoration: none;
   color: #1f2937;
   font-weight: 600;
@@ -73,20 +84,7 @@ body {
 
 
 
-.spende {
-  border: 2px solid #e2ded4;
-  padding: 10px 25px;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  color: #1f2937;
-  transition: transform 0.2s;
-  font-size: 20px;
-}
 
-.spende:hover {
-  transform: scale(1.1);
-}
 
 /* ================= ABIMOTTO ================= */
 .hero {
@@ -126,62 +124,51 @@ body {
   color: #9e2727;
 }
 
-.smileytop {
-    position:absolute;
-    top:100px;
-    left: -88%;
-    color:#9e2727;
-    font-size: 48px;
-    rotate: 15deg;
-}
-.smileybottom {
-    position:absolute;
-    top: 120px;
-    left: -91%;
-    color:#9e2727;
-    font-size: 58px;
-    rotate: 15deg;
-}
-
-.paperplane {
-    position: absolute;
-    top: -110px;
-    left: 150%;
-    color:#9e2727;
-    font-size: 108px;
-    rotate: 140deg;
     
-}
-
 /* ================= Übergangsbereich ================= */
 
 .full-break {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  background-color:#faf7e4;
+  background-color:#ffffff;
   padding: 120px 0 380px; 
   border-top: 2px solid #e2ded4;
  
 }
 
 .div2 {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   height: 500px;
-  padding: 100px;
-  border: 1px solid #9e2727;
-  text-align: center;
+
+  margin: 0 auto 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.527);
+}
+
+.div2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .div2cap {
-    text-align: center;
-    font-size: 45px;
-
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 50px;
 }
 
 .full-break-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 /* ================= Unsere Stufe ================= */
@@ -241,16 +228,13 @@ body {
 /* äußere Hülle → volle Breite */
 .slider-shell {
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
 }
 
-/* sichtbarer Bereich */
 .slider-viewport {
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
 }
-
 /* bewegte Spur */
 .slider-track {
   display: flex;
@@ -327,6 +311,117 @@ body {
   }
 }
 
+/* ================= MODAL ================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.7);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+
+  width: 90%;
+  max-width: 1200px;
+
+  height: 85vh;
+
+  background: #faf7e4;
+
+  border-radius: 20px;
+
+  overflow-y: auto;
+
+  padding: 40px;
+}
+
+.close-btn {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  border: none;
+  background: #9e2727;
+  color: white;
+
+  padding: 12px 20px;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.steckbrief {
+  display: flex;
+  gap: 50px;
+
+  margin-top: 70px;
+
+  align-items: flex-start;
+}
+
+.form-container img {
+  max-width: 700px;
+  width: 100%;
+}
+
+.flip-card {
+  width: 300px;
+  height: 300px;
+
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.8s;
+
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+}
 
 /* ===== Zitate Laufband ===== */
 
@@ -344,7 +439,7 @@ display: flex;
 width: max-content;
 gap: 6rem;
 white-space: nowrap;
-animation: scrollQuotes 40s linear infinite;
+animation: scrollQuotes 60s linear infinite;
 }
 
 .quote-track span {
@@ -371,3 +466,129 @@ transform: translateX(-50%);
     padding: 0;
   }
 }
+
+
+/* ================= STECKBRIEF ================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.75);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+
+  position: absolute;
+
+  width: 85%;
+  max-width: 850px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 30px;
+}
+
+.close-btn {
+
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  border: none;
+
+  background: #9e2727;
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.steckbrief-container {
+  position: static;
+
+  top: 10px;
+  left: 20px
+}
+
+.steckbrief-template {
+  width: 100%;
+  display: block;
+}
+
+/* ===== FOTO IM KREIS ===== */
+
+.portrait-flip {
+
+  position: absolute;
+
+  top: 108px;
+  right: 67px;
+
+  width: 235px;
+  height: 235px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+.portrait-inner {
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+
+  transition: transform 0.8s;
+}
+
+.portrait-flip:hover .portrait-inner {
+  transform: rotateY(180deg);
+}
+
+.portrait-front,
+.portrait-back {
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  backface-visibility: hidden;
+}
+
+.portrait-back {
+  transform: rotateY(180deg);
+}
+
+
